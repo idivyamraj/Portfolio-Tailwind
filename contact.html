@@ -23,8 +23,12 @@
         <a href="contact.html">Contact us</a>
         <a href="skills.html">Skills</a>
         <a href="resume.html">Resume</a>
-        <a href="https://github.com/idivyamraj"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/divyam-raj-947aa1321"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/idivyamraj"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/divyam-raj-947aa1321"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
       </div>
     </div>
 
@@ -34,7 +38,9 @@
 
     <div class="flex">
       <div class="w-[50%] p-13">
-        <p class="text-purple-700 text-2xl italic font-semibold">Let's Work Together</p>
+        <p class="text-purple-700 text-2xl italic font-semibold">
+          Let's Work Together
+        </p>
         <p class="text-purple-900 pt-2 text-xl italic">
           Have a project, Internship opportunity, in <br />
           collaboration in mind? Feel free to contact me.<br />
@@ -101,11 +107,29 @@
           <!-- Button -->
           <button
             type="submit"
-            class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 cursor-pointer">
+            class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 cursor-pointer"
+          >
             Submit
           </button>
         </form>
       </div>
     </div>
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          emailjs.sendForm("service_6ve9wdu", "template_3cmgteq", this).then(
+            function () {
+              alert("Message sent successfully!");
+            },
+            function (error) {
+              alert("Failed to send message: " + error.text);
+            },
+          );
+        });
+    </script>
   </body>
 </html>
